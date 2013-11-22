@@ -209,24 +209,24 @@ class ReleaseCommand(Command):
         changelog = self.project_dir / "CHANGES.txt"
         
         # Create the file if it doesn't exist
-        if not os.path.exists(changelog) or os.path.getsize(changelog) == 0:
-            with open(changelog, "w+") as f:
-                f.write("----\n")
-        
-        # This will captute STDOUT and overwrite the file
-        written = False
-        for line in fileinput.input(changelog, inplace=1):
-            print line,
-            if not written and line.startswith("----"):
-                # Write our new log messages
-                written = True
-                print self.make_changelog_text(changes, next_version)
-        
-        if not written:
-            # Didn't write anything, so lets just append it now
-            with open(changelog, "a") as f:
-                f.write("----\n")
-                f.write(self.make_changelog_text())
+        #if not os.path.exists(changelog) or os.path.getsize(changelog) == 0:
+        #    with open(changelog, "w+") as f:
+        #        f.write("----\n")
+        #
+        ## This will captute STDOUT and overwrite the file
+        #written = False
+        #for line in fileinput.input(changelog, inplace=1):
+        #    print line,
+        #    if not written and line.startswith("----"):
+        #        # Write our new log messages
+        #        written = True
+        #        print self.make_changelog_text(changes, next_version)
+        #
+        #if not written:
+        #    # Didn't write anything, so lets just append it now
+        #    with open(changelog, "a") as f:
+        #        f.write("----\n")
+        #        f.write(self.make_changelog_text())
         
 
     
