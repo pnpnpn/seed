@@ -7,6 +7,9 @@
 Documentation
 =============
 
+``pip install git+git://github.com/pnpnpn/seed.git@master``
+
+
 Documentation can be found here:
 
 http://seed.readthedocs.org
